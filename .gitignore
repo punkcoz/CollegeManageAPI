@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/CollegeAPIProject/Bal/bin/Debug/netcoreapp3.1
+/CollegeAPIProject/Bal/obj
+/CollegeAPIProject/GitCollegeAPI/.vs/PostsApi
+/CollegeAPIProject/GitCollegeAPI/bin/Debug/netcoreapp3.1
+/CollegeAPIProject/GitCollegeAPI/obj/Debug/netcoreapp3.1
+/CollegeAPIProject/GitCollegeAPI/obj
