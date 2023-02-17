@@ -12,7 +12,12 @@ namespace Bal.Model
 
         public string collegelocation { get; set; }
 
-
         public string collegedetails { get; set; }
+       
+        public int isarchive { get; set; }
+
+        public int college_logid { get; set; }
+
+        public DateTime college_log_date_time { get; set; }
     }
 }

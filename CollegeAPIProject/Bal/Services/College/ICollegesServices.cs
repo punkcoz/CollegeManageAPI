@@ -12,13 +12,18 @@ namespace Bal.Services.College
         Task<DataTable> GetAllCollege();
         //Task<DataTable> GetCollegeById(int collegeid);
 
+        Task<DataTable> College_Archive();
+
         Task<bool> AddNewCollege(CollegeModel college);
         //object GetCollegeById(CollegeModel college);
 
         Task<bool> UpdateCollege(CollegeModel updatecollege);
 
-        Task<bool> DeleteCollege(int deletecollegerow);
+        Task<bool> ArchiveCollege(int deletecollegerow);
 
-        //Task<DataSet> GetAllCollegeAndCourse();
+        Task<bool> CollegeRestore(int archiverestore);
+
+        Task<bool> PermanentDeleteCollege(int collegedelete);
+
     }
 }

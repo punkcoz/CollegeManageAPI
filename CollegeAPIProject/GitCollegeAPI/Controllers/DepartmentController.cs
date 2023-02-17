@@ -32,11 +32,33 @@ namespace PostsApi.Controllers
             return Ok(_departmentService.AddNewDepartment(department));
         }
 
-        [HttpDelete("DeleteDepartment/{deletedepartmentrow}")]
+        [HttpDelete("DepartmentArcived/{archivedepartment}")]
 
-        public IActionResult DeleteDepartment(int deletedepartmentrow)
+        public IActionResult DepartmentArcived(int archivedepartment)
         {
-            return Ok(_departmentService.DeleteDepartment(deletedepartmentrow));
+            return Ok(_departmentService.DepartmentArcived(archivedepartment));
+        }
+
+        [HttpPut("UpdateDepartment")]
+        public IActionResult UpdateDepartment(DepartmentModel updatedepartment)
+        {
+            return Ok(_departmentService.UpdateDepartment(updatedepartment));
+        }
+
+        // Used In Cource 
+        [HttpGet("GetAllDepartment/{selectcollegeid}")]
+
+        public IActionResult GetAllDepartment(int selectcollegeid)
+        {
+            return Ok(_departmentService.GetAllDepartment(selectcollegeid));
+        }
+        //End
+
+        [HttpGet("DepartmentGetArcivedDept")]
+
+        public IActionResult DepartmentGetArcivedDept()
+        {
+            return Ok(_departmentService.DepartmentGetArcivedDept());
         }
     }
 }

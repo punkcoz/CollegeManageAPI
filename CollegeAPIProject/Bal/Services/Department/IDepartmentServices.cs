@@ -12,7 +12,15 @@ namespace Bal.Services.Department
         Task<DataTable> GetDepartmentAndColleges();
         Task<bool> AddNewDepartment(DepartmentModel department);
 
-        Task<bool> DeleteDepartment(int deletedepartmentrow);
+        Task<bool> DepartmentArcived(int archivedepartment);
+
+        Task<bool> UpdateDepartment(DepartmentModel updatedepartment);
+
+
+        // Used In Cource Model
+        Task<DataTable> GetAllDepartment(int selectcollegeid);
+        // End
+        Task<DataTable> DepartmentGetArcivedDept();
     }
     
 }

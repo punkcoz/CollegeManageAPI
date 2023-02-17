@@ -15,7 +15,7 @@ namespace PostsApi.Controllers
 
         public CollegeController(ICollegesServices collegesServices)
         {
-            _collegeService= collegesServices;
+            _collegeService = collegesServices;
         }
 
 
@@ -45,21 +45,38 @@ namespace PostsApi.Controllers
         {
             return Ok(_collegeService.UpdateCollege(UpdateCollege));
         }
-        
-        
-        [HttpDelete("DeleteCollege/{deletecollegerow}")]
 
-        public IActionResult DeleteCollege(int deletecollegerow)
+
+        [HttpDelete("ArchiveCollege/{deletecollegerow}")]
+
+        public IActionResult ArchiveCollege(int deletecollegerow)
         {
-            return Ok(_collegeService.DeleteCollege(deletecollegerow));
+            return Ok(_collegeService.ArchiveCollege(deletecollegerow));
         }
-        
-        //[HttpGet("getallcollegeandcourse")]
 
-        //public IActionResult getallcollegeandcourse()
-        //{
-        //    return Ok(_collegeService.GetAllCollegeAndCourse());
-        //}
+
+
+        [HttpGet("College_Archive")]
+
+        public IActionResult College_Archive()
+        {
+            return Ok(_collegeService.College_Archive());
+        }
+
+        [HttpPostAttribute("CollegeRestore/{archiverestore}")]
+
+        public IActionResult CollegeRestore(int archiverestore)
+        {
+            return Ok(_collegeService.CollegeRestore(archiverestore));
+        }
+
+        [HttpDelete("PermanentDeleteCollege/{collegedelete}")]
+
+        public IActionResult PermanentDeleteCollege(int collegedelete)
+
+        {
+            return Ok(_collegeService.PermanentDeleteCollege(collegedelete));
+        }
 
     }
 }

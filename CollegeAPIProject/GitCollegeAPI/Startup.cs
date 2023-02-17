@@ -1,4 +1,5 @@
 using Bal.Services.College;
+using Bal.Services.Course;
 using Bal.Services.Department;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -46,6 +47,7 @@ namespace PostsApi
             x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddScoped<ICollegesServices , CollegeServices>();
             services.AddScoped<IDepartmentServices, DepartmentServices>();
+            services.AddScoped<ICourseServices, CourseServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
