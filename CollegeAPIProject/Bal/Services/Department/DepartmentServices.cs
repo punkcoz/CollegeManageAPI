@@ -1,5 +1,6 @@
 ﻿using Bal.Model;
 using BAL.Configurations;
+using Common.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using MySql.Data.MySqlClient;
 using System;
@@ -68,6 +69,12 @@ namespace Bal.Services.Department
                 //var result = await _sqlCommand.AddOrEditWithStoredProcedure("college_archive", null, deletecollegerow, "prm_");
                 var query = $"select * from department where departmentid = {archivedepartment};";
                 DataTable department = await _sqlCommand.Select_Table(query, CommandType.Text);
+
+                //DepartmentModel departmentModel = DataTableVsListOfType.ConvertDataTableToModel<DepartmentModel>(department.Rows[0]);
+
+                //departmentModel.department_logdatetime = DateTime.Now;
+                //var success = await _sqlCommand.AddOrEditWithStoredProcedure("department_archive", null, departmentModel,"prm_");
+
                 if (department.Rows.Count > 0)
                 {
 
@@ -86,7 +93,7 @@ namespace Bal.Services.Department
                             myTrans.Commit();
 
                         }
-                      
+
                         return isDeleted;
                     }
                     myTrans.Rollback();
